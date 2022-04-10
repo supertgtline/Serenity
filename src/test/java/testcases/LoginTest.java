@@ -12,6 +12,7 @@ public class LoginTest {
     WebDriver driver;
     @Test
     public void doLogin(){
+        //Lession 10
         driver.get("https://google.com");
         driver.findElement(By.name("q")).sendKeys("Hello Serenity !");
     }
