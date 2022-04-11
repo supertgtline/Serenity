@@ -1,8 +1,8 @@
 package testcases;
 
+import static java.time.temporal.ChronoUnit.SECONDS;
 import net.serenitybdd.core.annotations.findby.FindBy;
 import net.serenitybdd.core.pages.PageObject;
-import net.serenitybdd.core.pages.WebElementFacade;
 import net.serenitybdd.junit.runners.SerenityRunner;
 import net.thucydides.core.annotations.Managed;
 import net.thucydides.core.annotations.Title;
@@ -12,11 +12,13 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
+import java.util.concurrent.TimeUnit;
+
 @RunWith(SerenityRunner.class)
 public class SerenityGmailTest extends PageObject {
     @FindBy(name="q")
     WebElement googleSearch;
-    @Managed(driver = "chrome")
+    @Managed(driver = "edge")
     WebDriver driver;
     @Title("Executing Login Test")
     @Test
@@ -24,9 +26,9 @@ public class SerenityGmailTest extends PageObject {
         //Lession 10
         //driver.get("https://google.com");
         open();
-       find(By.id("identifierId")).sendKeys("giangthaonexle@gmail.com");
-       find(By.xpath("//*[@id=\"identifierNext\"]/span/span")).click();
-       find(By.xpath("//*[@id=\"password\"]/div[1]/div/div[1]/input")).sendKeys("password Gmail");
+       find(By.id("identifierId")).type("giangthaonexle@gmail.com");
+       find(By.xpath("//button[@type='button']//div[@class='VfPpkd-RLmnJb']")).click();
+       find(By.xpath("//input[@type='password']")).sendKeys("password Gmail");
        Thread.sleep(3000);
 
     }
