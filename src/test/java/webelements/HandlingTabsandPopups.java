@@ -32,7 +32,6 @@ public class HandlingTabsandPopups extends PageObject {
 		getDriver().switchTo().window(newTab.get(1));
 		
 		$("//*[@id=\"user_email\"]").sendKeys("trainer@way2automation.com");
-		
 		System.out.println("Second window Title : "+getTitle());
 		getDriver().close();
 		getDriver().switchTo().window(newTab.get(0));
